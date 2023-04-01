@@ -1,13 +1,45 @@
-import React from "react";
+import React, {useState} from "react";
+import { Navigate } from 'react-router-dom';
 import './Auth.css'
 
 
-function LandlordLogin(){
+function LandlordLogin({signup}){
+
+    const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    function handleLogin(e){
+        e.preventDefault();
+        fetch("http://127.0.0.1:3000/landlord/login",{
+			mode: 'no-cors',
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ username, password }),
+		})
+            .then((r) =>{
+				// setIsLoading(false);
+                if(r.status.ok){
+                    r.json().then((user)=>{
+                        setIsLoggedIn(true);
+                        signup(user)
+                    })
+                }
+            })
+    }
+
+
+    if (isLoggedIn) {
+        return <Navigate to="/home" />;
+      }
+
 
     return(
         <>
 
-        <form className="sign-up-htm" onSubmit={handleSubmit}>
+        <form className="sign-up-htm" onSubmit={handleLogin}>
             <div className="group">
                 <label for="user" className="label">Username</label>
                 <input id="user" type="text" className="input" value={username} onChange={(e)=>{
@@ -16,14 +48,10 @@ function LandlordLogin(){
             </div>
 
 
-            <div className="group">
-                <label for="pass" className="label">Email Address</label>
-                <input id="pass" type="text" className="input" value={email} onChange={(e)=> setEmail(e.target.value)} />
-            </div>
 
 
             <div className="group">
-                <label for="pass" className="label">Password</>
+                <label for="pass" className="label">Password</label>
                 <input id="pass" type="password" className="input" data-type="password" value={password} onChange={(e)=> setPassword(e.target.value)} />
             </div>
 
