@@ -1,6 +1,7 @@
-.App {
+/* .App {
   text-align: center;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +36,26 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+body{
+  background: rgb(49, 41, 41);
+}
+
+#logo_title{
+  display:flex;
+  color: white;
+  text-align: center;
+  font-family: 'Pirata One', cursive;
+  left: 50%;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#register{
+  text-align: centre;
+  display: flex;
+  justify-content: centre;
+  color: rgb(255, 255, 255);
 }
