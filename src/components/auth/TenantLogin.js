@@ -31,7 +31,7 @@ function TenantLogin({signup}){
 
 
     if (isLoggedIn) {
-        return <Navigate to="/home" />;
+        return <Navigate to="/tenant/home" />;
       }
 
 

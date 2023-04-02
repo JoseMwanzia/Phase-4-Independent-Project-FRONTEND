@@ -34,7 +34,7 @@ function TenantSignup({signup}){
 
 
     if (isRegistered) {
-        return <Navigate to="/home" />;
+        return <Navigate to="/tenant/home" />;
       }
 
 
@@ -64,7 +64,7 @@ function TenantSignup({signup}){
 				</div>
 
                 <div className="hr"></div>
-                
+
                 <div className="foot-lnk">
                     <label for="tab-1"><Link to="/login">Already Member?</Link></label>
                 </div>
