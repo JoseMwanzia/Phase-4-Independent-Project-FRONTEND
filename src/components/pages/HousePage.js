@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import HouseItem from "../items/HouseItem";
 import { GrFormAdd } from 'react-icons/gr';
+import Navbar from "../navbar/Navbar";
+import './Review.css'
 
 
 function HousePage({id}){
@@ -16,7 +18,7 @@ function HousePage({id}){
     useEffect(()=>{
         fetch(`http://127.0.0.1:3000//apartments/${id}/houses`)
         .then((r) => r.json())
-        .then((r)=>setHouses(r.data))
+        .then((d)=>setHouses(d))
     },[id])
 
 
@@ -48,9 +50,12 @@ function HousePage({id}){
 
     return(
         <>
-            <div className="container  mt-4" id="selection">
+
+        <Navbar/>
+
+            <div className="form" >
                 
-                <div className="row">
+                <div className="row aptForm" >
                     <center><h2 style={{color:"red"}} id="reviewform">Add a house </h2></center>
                 
     

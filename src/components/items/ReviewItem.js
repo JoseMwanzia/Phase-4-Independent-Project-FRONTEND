@@ -18,7 +18,7 @@ function ReviewItem({review}){
                     </div>
 
                     <div id="item_footer">
-                        <h6><span>Apartment</span> <span>{review.house.house_number}</span>  </h6>
+                        <h6><span>Tenant</span> <span>{review.tenant.username}</span>  </h6>
                         <h6 id="del_edit"><span><AiOutlineEdit/></span>  <span><AiOutlineDelete/></span></h6>
                     </div>
                     

@@ -31,7 +31,7 @@ function TenantLogin({signup}){
 
 
     if (isLoggedIn) {
-        return <Navigate to="/tenant/home" />;
+        return <Navigate to="/home" />;
       }
 
 
@@ -51,7 +51,7 @@ function TenantLogin({signup}){
 				</div>
 			
 				<div className="group">
-					<input type="submit" className="button" value="Sign In"/>
+					<input type="submit" className="button" value="Sign In" onClick={()=>alert("unaauthoorized")}/>
 				</div>
 				<div className="hr"></div>
 				<div className="foot-lnk">

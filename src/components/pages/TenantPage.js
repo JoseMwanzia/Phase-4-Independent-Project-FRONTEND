@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import TenantItem from "../items/TenantItem";
 import { GrFormAdd } from 'react-icons/gr';
+import Navbar from "../navbar/Navbar";
 
 
 function TenantPage(){
@@ -36,7 +37,9 @@ function TenantPage(){
     useEffect(()=>{
         fetch("http://127.0.0.1:3000/tenants")
         .then((r) => r.json())
-        .then((r)=>setTenants(r.data))
+        .then((r)=>{
+    
+            setTenants(r)})
     },[])
 
 
@@ -44,9 +47,11 @@ function TenantPage(){
 
     return(
         <>
-            <div className="container  mt-4" id="selection">
+
+        <Navbar/>
+            <div className="form">
                 
-                <div className="row">
+                <div className="row aptForm">
                     <center><h2 style={{color:"red"}} id="reviewform">Leave a review </h2></center>
                 
                    {/* contain a form to add a reviews */}
@@ -74,14 +79,14 @@ function TenantPage(){
                 </div>
             </div>
 
-    <div className="container mt-3" id="taskList">
+    <div className="container mt-3 taskList">
             <center>
                 <h4>TENANTS</h4>
             </center>
             <div  className="row">
 
                 {
-                    tenants.map((tenant)=> <TenantItem tenant={tenant}/> )
+                    tenants?.map((tenant)=> <TenantItem tenant={tenant}/> )
                 }
 
 

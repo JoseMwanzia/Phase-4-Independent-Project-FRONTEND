@@ -34,7 +34,7 @@ function LandlordSignup({signup}){
 
 
     if(isRegistered){
-       return <Navigate to="/landlord/home" />
+       return <Navigate to="/home" />
     }
 
 

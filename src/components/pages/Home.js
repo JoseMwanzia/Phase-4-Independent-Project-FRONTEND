@@ -3,14 +3,12 @@ import { Route, Routes, Navigate} from "react-router-dom";
 import "./Home.css"
 // import TenantPage from "./TenantPage";
 // import HousePage from "./HousePage";
-import ApartmentPage from "./ApartmentPage";
-import Review from "./Review";
-import TenantNavbar from "../navbar/TenantNavbar";
+import Navbar from "../navbar/Navbar";
 
 
 
 
-function TenantHome({user, handleLogout}){
+function Home({user, handleLogout, setUser}){
 
     // const[tenant, setTenant]= useState([])
 
@@ -30,20 +28,28 @@ function TenantHome({user, handleLogout}){
         //     .then(data=>setTenant(data))
         // },[])
 
-        // function loggedOut(){
-        //     return <Navigate to="/"/>
-        // }
+        function loggedOut(){
+            // fetch("http://127.0.0.1:3000/logout", { method: "DELETE" })
+            // .then(d => d.json())
+            // .then((r) => {
+            //   if (r.message === "success") {
+            //     console.log(r.message)
+            //     setUser(null);
+            //   }
+            // });
+            return <Navigate to="/"/>
+        }
 
 
 
     return(
         <div>
 
-        <TenantNavbar/>
+        <Navbar/>
     
 
         <div className="logout">
-            <button type="button" className="btn btn-outline-danger" onclick={handleLogout()}>Log Out</button>
+            <button type="button" className="btn btn-outline-danger" onClick={loggedOut}>Log Out</button>
         </div>
 
 
@@ -63,16 +69,7 @@ function TenantHome({user, handleLogout}){
         </div>
 
 
-        <Routes>
-
-            <Route path="/tenant/home" element={<TenantHome/>}/>
-
-            <Route path="/apartments" element={<ApartmentPage/>}/>
-
-            <Route path="/Reviews" element={<Review/>}/>
-
-        </Routes>
-
+   
         
 
         </div>
@@ -80,4 +77,4 @@ function TenantHome({user, handleLogout}){
 
 }
 
-export default TenantHome;
+export default Home;

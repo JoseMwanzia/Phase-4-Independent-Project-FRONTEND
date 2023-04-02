@@ -25,7 +25,8 @@ function TenantSignup({signup}){
             if (r.status.created) {
               r.json().then((user) =>{
                 console.log(user)
-                setIsRegistered(true);               signup(user)
+                setIsRegistered(true);
+                signup(user)
               });
             }
            
@@ -34,7 +35,7 @@ function TenantSignup({signup}){
 
 
     if (isRegistered) {
-        return <Navigate to="/tenant/home" />;
+        return <Navigate to="/home" />;
       }
 
 

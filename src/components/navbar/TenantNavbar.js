@@ -10,7 +10,7 @@ function TenantNavbar(){
 
     <nav className="nav">
 
-        <Link className="nav-link"  to="/tenant/home">Home</Link>
+        <Link className="nav-link"  to="/home">Home</Link>
         <Link className="nav-link" to="/apartments">Apartment</Link>
         <Link className="nav-link" to="/reviews">Reviews</Link>
 
