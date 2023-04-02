@@ -1,0 +1,44 @@
+.task_item{
+    /* min-height: 100px; */
+     margin: auto;
+     background-color: rgb(0, 0, 0);
+     border-radius: 5px;
+     border-color: rgb(251, 174, 174);
+     padding: 10px;
+     border: 10px;
+     margin-top: 10px;
+ }
+ 
+ #task_card{
+     min-height: 100px;
+     background-color: rgb(167, 167, 167);
+     padding: 10px;
+     border: 10px;
+     border-color: rgb(255, 255, 255);
+     padding: 10px;
+ 
+ }
+ 
+ #description{
+     font-size: 0.9em;
+ }
+ 
+ 
+ #item_footer{
+ 
+     display: flex;
+     
+ }
+
+ .textColor{
+    color: white;
+
+ }
+ 
+ #del_edit{
+    display: flex;
+ }
+
+ .tenant_footer{
+    margin-left: 5px;
+ }

@@ -1,23 +1,84 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Route, Routes, Link, Navigate} from "react-router-dom"
+import Home from "./components/pages/Home";
+import Landingpage from './components/pages/Landingpage';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
+import ApartmentPage from './components/pages/ApartmentPage';
+import Review from './components/pages/Review';
+import TenantPage from './components/pages/TenantPage';
+import HousePage from './components/pages/HousePage';
+import ResetPassword from './components/auth/ResetPassword';
 
 function App() {
+
+
+  const [user, setUser] = useState(null);
+  const [anyUser, setAnyUser] = useState(false)
+
+  function signup(user) {
+		setUser(user);
+	}
+
+  function handleLogout() {
+    fetch("http://127.0.0.1:3000/logout", { method: "DELETE" })
+    .then(d => d.json())
+    .then((r) => {
+      if (r.message === "success") {
+        setUser(null);
+        setAnyUser(true)
+      }
+    });
+  }
+
+if(anyUser){
+  return <Navigate to="/"/>
+}
+  
+
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h3 >
+        <Link to="/" id="logo_title">RealState</Link>  
+      </h3>
+
+
+
+
+      <Routes>
+
+        <Route path="/" element={<Landingpage/>}/>
+
+        <Route path="/home" element={<Home handleLogout={handleLogout} user={user} setUser={setUser} setAnyUser={setAnyUser}/>}/>
+
+
+        <Route path="/login" element={<Login signup={signup}/>} />
+
+        <Route path="/signup" element={<Signup signup={signup}/>} />
+
+        <Route path="/apartments" element={<ApartmentPage />}/>
+
+        <Route path="/houses" element={<HousePage />}/>
+
+        <Route path="/tenants" element={<TenantPage />}/>
+        
+
+        <Route path="/Reviews" element={<Review/>}/>
+
+        <Route path="/password/reset" element={<ResetPassword/>}/>
+
+      </Routes>
+
+
+
+
+
+   
     </div>
   );
 }
