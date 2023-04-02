@@ -51,7 +51,7 @@ function Home({user, setAnyUser, setUser}){
         
             <div className="row homeContent">
                 <div className="col">
-                    <p className="homeContent"> <span>Welcome</span>  <br/> <span>{user.username}</span></p>
+                    <p className="homeContent"> <span>Welcome</span>  <br/> <span>{user ? user.username: " "}</span></p>
                 </div>
                 <div className="col">
                      <p> View appartments and their reviews before making your next lease</p>

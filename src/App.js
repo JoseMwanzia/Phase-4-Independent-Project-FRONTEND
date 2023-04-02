@@ -9,6 +9,7 @@ import ApartmentPage from './components/pages/ApartmentPage';
 import Review from './components/pages/Review';
 import TenantPage from './components/pages/TenantPage';
 import HousePage from './components/pages/HousePage';
+import ResetPassword from './components/auth/ResetPassword';
 
 function App() {
 
@@ -68,6 +69,8 @@ if(anyUser){
         
 
         <Route path="/Reviews" element={<Review/>}/>
+
+        <Route path="/password/reset" element={<ResetPassword/>}/>
 
       </Routes>
 

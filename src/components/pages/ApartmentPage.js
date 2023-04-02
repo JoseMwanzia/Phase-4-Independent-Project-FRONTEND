@@ -87,7 +87,7 @@ function ApartmentPage(){
                 </div>
             </div>
 
-    <div className="container taskList">
+    <div className="container mt-5 taskList">
             <center>
                 <h4>APARTMENTSS</h4>
             </center>

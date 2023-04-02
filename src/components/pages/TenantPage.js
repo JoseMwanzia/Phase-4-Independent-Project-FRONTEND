@@ -89,7 +89,7 @@ function TenantPage(){
                 </div>
             </div>
 
-    <div className="container mt-3 taskList">
+    <div className="container mt-5 taskList">
             <center>
                 <h4>TENANTS</h4>
             </center>

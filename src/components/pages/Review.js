@@ -12,6 +12,9 @@ function Review(){
     // const [houseNumber, setHouseNumber] = useState("")
     const [house_id, setHouse_id] = useState()
 
+    let ratings = parseInt(rating)
+    let house_ids = parseInt(house_id)
+
 
 
     useEffect(()=>{
@@ -32,16 +35,15 @@ function Review(){
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-                rating,
+                rating : ratings,
                  description,
-                 house_id
+                 house_id: house_ids
                 }),
 		})
-        .then((r) => {
-              r.json().then((review) => {
-                setReviews(...reviews, review)
-            }); 
-          });
+        .then((r)=>r.json())
+        .then((review)=>{
+            setReviews(...reviews, review)
+        })
 	}
 
 

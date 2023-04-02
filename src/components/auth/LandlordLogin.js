@@ -60,7 +60,7 @@ function LandlordLogin({signup}){
 
             <div className="hr"></div>
             <div className="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
+					<Link to="/password/reset">Forgot Password?</Link>
                     <br/>
                     <Link to="/signup">Sign up</Link>
 				</div>

@@ -16,10 +16,10 @@ function HousePage({id}){
     
 
     useEffect(()=>{
-        fetch(`http://127.0.0.1:3000/apartments/${id}/houses`)
+        fetch("http://127.0.0.1:3000/houses")
         .then((r) => r.json())
         .then((d)=>setHouses(d))
-    },[id])
+    },[])
 
 
     // /apartment/house/add/:id
@@ -97,14 +97,14 @@ function HousePage({id}){
                 </div>
             </div>
 
-    <div className="container mt-3" id="taskList">
+    <div className="container mt-5" id="taskList">
             <center>
                 <h4>REVIEWS</h4>
             </center>
             <div  className="row">
 
                 {
-                    houses.map((house)=> <HouseItem house={house}/> )
+                    houses?.map((house)=> <HouseItem house={house}/> )
                 }
 
 
