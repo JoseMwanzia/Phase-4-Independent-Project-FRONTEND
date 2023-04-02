@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Route, Routes, Link, Navigate} from "react-router-dom"
-import Home from "./components/pages/Home";
+import TenantHome from "./components/pages/TenantHome";
+import LandlordHome from './components/pages/LandlordHome';
 import Landingpage from './components/pages/Landingpage';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
@@ -44,25 +45,16 @@ if(anyUser){
 
 
       <Routes>
+
         <Route path="/" element={<Landingpage/>}/>
-        <Route path="/home" element={<Home handleLogout={handleLogout} user={user}/>}/>
+
+        <Route path="/tenant/home" element={<TenantHome handleLogout={handleLogout} user={user}/>}/>
+
+        <Route path="/landlord/home" element={<LandlordHome handleLogout={handleLogout} user={user}/>}/>
 
         <Route path="/login" element={<Login signup={signup}/>} />
 
         <Route path="/signup" element={<Signup signup={signup}/>} />
-
-
-
-
-        {/* <Route path="/login" element={
-       
-        !user ? <Login signup={signup} /> : <Navigate to="/home"></Navigate>
-       }/>
-
-      <Route path="/signup" element={
-       
-       !user ? <Signup signup={signup} /> : <Navigate to="/home"></Navigate>
-      }/> */}
 
       </Routes>
 
