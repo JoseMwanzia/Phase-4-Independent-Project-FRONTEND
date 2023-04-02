@@ -32,7 +32,7 @@ function LandlordLogin({signup}){
 
 
     if (isLoggedIn) {
-        return <Navigate to="/home" />;
+        return <Navigate to="/landlord/home" />;
       }
 
 
