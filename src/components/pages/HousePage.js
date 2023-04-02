@@ -16,7 +16,7 @@ function HousePage({id}){
     
 
     useEffect(()=>{
-        fetch(`http://127.0.0.1:3000//apartments/${id}/houses`)
+        fetch(`http://127.0.0.1:3000/apartments/${id}/houses`)
         .then((r) => r.json())
         .then((d)=>setHouses(d))
     },[id])

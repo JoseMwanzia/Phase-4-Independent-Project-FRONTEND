@@ -53,7 +53,7 @@ if(anyUser){
 
         <Route path="/" element={<Landingpage/>}/>
 
-        <Route path="/home" element={<Home handleLogout={handleLogout} user={user} setUser={setUser}/>}/>
+        <Route path="/home" element={<Home handleLogout={handleLogout} user={user} setUser={setUser} setAnyUser={setAnyUser}/>}/>
 
 
         <Route path="/login" element={<Login signup={signup}/>} />

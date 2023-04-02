@@ -1,5 +1,6 @@
 import React from "react";
 import {AiOutlineEdit, AiOutlineDelete} from "react-icons/ai"
+import "./ReviewItem.css"
 
 
 function TenantItem({tenant}){
@@ -8,17 +9,19 @@ function TenantItem({tenant}){
 
         <div className="col-3 p-1">
             <div className="card" >
-                <img src="..." className="card-img-top" alt="..."/>
+                <img src="https://cdn-icons-png.flaticon.com/512/5556/5556468.png" className="card-img-top" alt="..."/>
                 <div className="card-body">
-                    <h5 className="card-title">Tenant Name</h5>
-                    <p className="card-text"></p>
-                    <a target={'_blank'} href="#" className="btn btn-primary">{}</a>
+                    <h5 className="card-title">{tenant.username}</h5>
+                    <p className="card-text">{tenant.email} </p>
                 </div>
 
-                <div id="item_footer">
-                        <h6><span>Apartment</span> <span>house</span>  </h6>
-                        <h6 id="del_edit"><span><AiOutlineEdit/></span>  <span><AiOutlineDelete/></span></h6>
-                    </div>
+                <div className="tenant_footer">
+                        <h6><span>House:</span> <span>{tenant.houses[0] ? tenant.houses[0].house_number: "No House" }</span></h6>
+                        
+                </div>
+                <div className="tenant_footer">
+                    <h6 id="del_edit"><span><AiOutlineEdit/></span>  <span><AiOutlineDelete/></span></h6>
+                </div>
 
             </div>
         </div> 

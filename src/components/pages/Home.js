@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from "react";
-import { Route, Routes, Navigate} from "react-router-dom";
+import { Navigate} from "react-router-dom";
 import "./Home.css"
 // import TenantPage from "./TenantPage";
 // import HousePage from "./HousePage";
@@ -8,7 +8,7 @@ import Navbar from "../navbar/Navbar";
 
 
 
-function Home({user, handleLogout, setUser}){
+function Home({user, setAnyUser, setUser}){
 
     // const[tenant, setTenant]= useState([])
 
@@ -29,15 +29,9 @@ function Home({user, handleLogout, setUser}){
         // },[])
 
         function loggedOut(){
-            // fetch("http://127.0.0.1:3000/logout", { method: "DELETE" })
-            // .then(d => d.json())
-            // .then((r) => {
-            //   if (r.message === "success") {
-            //     console.log(r.message)
-            //     setUser(null);
-            //   }
-            // });
-            return <Navigate to="/"/>
+            fetch("http://127.0.0.1:3000/logout", { method: "DELETE" })
+            setUser(null);
+            setAnyUser(true)
         }
 
 

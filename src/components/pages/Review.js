@@ -7,10 +7,10 @@ import Navbar from "../navbar/Navbar";
 function Review(){
 
     const [reviews, setReviews] = useState([])
-    const [rating, setRating] =useState(1)
+    const [rating, setRating] =useState()
     const [description, setDescription] =useState("")
     // const [houseNumber, setHouseNumber] = useState("")
-    const [house_id, setHouse_id] = useState(0)
+    const [house_id, setHouse_id] = useState()
 
 
 
@@ -38,12 +38,9 @@ function Review(){
                 }),
 		})
         .then((r) => {
-            if (r.status.created) {
               r.json().then((review) => {
                 setReviews(...reviews, review)
-
-            });
-            }
+            }); 
           });
 	}
 
@@ -67,11 +64,10 @@ function Review(){
                 
                    {/* contain a form to add a reviews */}
     
-                   <form className="row gx-3 gy-2 align-items-center" id="create_form" onSubmit={()=>{
-                    handleSubmit()}}>
+                   <form className="row gx-3 gy-2 align-items-center" id="create_form" onSubmit={handleSubmit}>
                         <div className="col-sm-3">
                     <label className="visually-hidden" for="specificSizeInputName">rating</label>
-                     <input type="number" className="form-control" id="specificSizeInputName" placeholder="Rating" Value={rating} onChange={(e)=>setRating(e.target.value)}/>
+                     <input type="number" className="form-control" id="specificSizeInputName" placeholder="Rating" value={rating} onChange={(e)=>setRating(e.target.value)}/>
                 </div>
                 <div className="col-sm-3">
                     <label className="visually-hidden" for="specificSizeInputGroupUsername">Description</label>
@@ -83,7 +79,7 @@ function Review(){
                     <div className="col-sm-3">
                     <label className="visually-hidden" for="specificSizeInputGroupUsername">House id</label>
                     <div className="input-group">
-                            <input type="text" className="form-control" id="specificSizeInputGroupUsername" placeholder="house number" value={house_id} onChange={(e)=> setHouse_id(e.target.value)} />
+                            <input type="number" className="form-control" id="specificSizeInputGroupUsername" placeholder="housenumber" value={house_id} onChange={(e)=> setHouse_id(e.target.value)} />
                     </div>
                     </div>
 
