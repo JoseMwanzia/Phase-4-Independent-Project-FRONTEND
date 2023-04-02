@@ -8,7 +8,7 @@ function Landingpage(){
     return(
         <>
 
-        <div class="d-grid gap-2 d-md-block me-9" >
+        <div class="d-grid gap-2 d-md-block me-9"  id="auth">
             <button type="button" class="btn btn-outline-success"><Link to="/login">Login</Link></button>
             <button type="button" class="btn btn-outline-success"><Link to="/Signup">Signup</Link></button>
         </div>

@@ -47,3 +47,11 @@
     transform: scale(1.5);
 
   }
+
+  #auth{
+    position:absolute;
+    display: flex;
+    justify-content: right;
+    left: 90%;
+    margin: 10px;
+  }
