@@ -1,3 +1,10 @@
 .homeContent{
     color: white;
 }
+.logout{
+    position:absolute;
+    display: flex;
+    justify-content: right;
+    left: 90%;
+    margin: 10px;
+  }
