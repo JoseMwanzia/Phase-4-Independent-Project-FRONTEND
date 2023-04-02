@@ -1,4 +1,5 @@
 import React from "react";
+import {AiOutlineEdit, AiOutlineDelete} from "react-icons/ai"
 
 
 function TenantItem({tenant}){
@@ -11,7 +12,7 @@ function TenantItem({tenant}){
                 <div className="card-body">
                     <h5 className="card-title">Tenant Name</h5>
                     <p className="card-text"></p>
-                    <a target={'_blank'} href="#" className="btn btn-primary">{Houses}</a>
+                    <a target={'_blank'} href="#" className="btn btn-primary">{}</a>
                 </div>
 
                 <div id="item_footer">
